@@ -130,8 +130,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
+#caminho onde ficará os arquivos estáticos após executarmos o comando python manage.py collectstatic
+#que irá gerar uma cópia de todos os nossos arquivos estáticos (incluindo os listados em 
+# STATICFILES_DIR) para que possamos colocá-los em um servidor
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# é a URL de acesso que o django irá usar para procurar os nossos arquivos estáticos. 
+# Ao fazermos: STATIC_URL = '/static/', estamos definindo que internamente o django faça algo 
+# como: http://localhost:8000/static/imagem.png para procurar algum recurso solicitado.
 STATIC_URL = 'static/'
+
+# Essa configuração serve para mostrarmos ao django caminhos adicionais para que ele procure arquivos 
+# estáticos.
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'alurarereitas/static')
 ]
